@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Container, ListGroup, Pagination, Spinner } from 'react-bootstrap'
+import { Button, Container, ListGroup, Pagination, Spinner, Table } from 'react-bootstrap'
 import axios from 'axios'
+import { FaEdit, FaTrash } from 'react-icons/fa'
+
 
 const ListarAluno = () => {
     const urlDoBackend = "http://localhost:3000"
@@ -49,29 +51,43 @@ const ListarAluno = () => {
                 </div>
             ) : (
                 <>
-                    <ListGroup>
-                        <ListGroup.Item className="d-flex fw-bold bg-primary text-white text-center">
-                            <div className="flex-fill border-end pe-2">ID</div>
-                            <div className="flex-fill border-end pe-2">Nome</div>
-                            <div className="flex-fill border-end pe-2">Email</div>
-                            <div className="flex-fill border-end pe-2">Nota 1</div>
-                            <div className="flex-fill border-end pe-2">Nota 2</div>
-                            <div className="flex-fill border-end pe-2">Nota 3</div>
-                            <div className="flex-fill">Nota 4</div>
-                        </ListGroup.Item>
-
-                        {alunosPaginados.map(aluno => (
-                            <ListGroup.Item key={aluno.id} className="d-flex text-center">
-                                <div className="flex-fill">{aluno.id}</div>
-                                <div className="flex-fill">{aluno.nome}</div>
-                                <div className="flex-fill">{aluno.email}</div>
-                                <div className="flex-fill">{aluno.nota1}</div>
-                                <div className="flex-fill">{aluno.nota2}</div>
-                                <div className="flex-fill">{aluno.nota3}</div>
-                                <div className="flex-fill">{aluno.nota4}</div>
-                            </ListGroup.Item>
-                        ))}
-                    </ListGroup>
+                    <Table striped bordered hover responsive className="text-center align-middle">
+                        <thead className="table-primary">
+                            <tr>
+                                {/* <th>ID</th> */}
+                                <th>Ações</th>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Nota 1</th>
+                                <th>Nota 2</th>
+                                <th>Nota 3</th>
+                                <th>Nota 4</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {alunosPaginados.map(aluno => (
+                                <tr key={aluno.id}>
+                                    <td>
+                                        <div className="d-flex gap-2 justify-content-center">
+                                            <Button variant="primary">
+                                                <FaEdit />
+                                            </Button>
+                                            <Button variant="danger">
+                                                <FaTrash />
+                                            </Button>
+                                        </div>
+                                    </td>
+                                    {/* <td>{aluno.id}</td> */}
+                                    <td>{aluno.nome}</td>
+                                    <td>{aluno.email}</td>
+                                    <td>{aluno.nota1}</td>
+                                    <td>{aluno.nota2}</td>
+                                    <td>{aluno.nota3}</td>
+                                    <td>{aluno.nota4}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </Table>
 
                     <Pagination className="justify-content-center mt-4">
                         <Pagination.First onClick={() => setPaginaAtual(1)} disabled={paginaAtual === 1} />

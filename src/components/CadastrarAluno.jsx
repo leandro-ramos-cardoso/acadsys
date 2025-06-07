@@ -38,6 +38,10 @@ const CadastrarAluno = () => {
     const handleReset = () => {
         setNome("")
         setEmail("")
+        setNota1("")
+        setNota2("")
+        setNota3("")
+        setNota4("")
     }
 
     return (
