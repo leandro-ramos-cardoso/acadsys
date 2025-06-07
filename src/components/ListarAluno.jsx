@@ -8,10 +8,7 @@ import { saveAs } from 'file-saver'
 
 const ListarAluno = () => {
     
-    const urlDoBackend =
-        process.env.NODE_ENV === 'development'
-            ? 'http://localhost:3000/api/alunos'
-            : '/api/alunos' // em produção no Vercel
+    const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
 
     const [alunos, setAlunos] = useState([])
     const [carregando, setCarregando] = useState(true)

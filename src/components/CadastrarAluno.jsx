@@ -7,11 +7,9 @@ import 'react-toastify/dist/ReactToastify.css'
 const CadastrarAluno = () => {
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
-    
-    const urlDoBackend =
-        process.env.NODE_ENV === 'development'
-            ? 'http://localhost:3000/api/alunos'
-            : '/api/alunos' // em produção no Vercel
+    // const urlDoBackend = "http://localhost:3000"
+    const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
+
 
     const [nota1, setNota1] = useState("")
     const [nota2, setNota2] = useState("")
