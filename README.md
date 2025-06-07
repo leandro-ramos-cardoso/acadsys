@@ -68,17 +68,12 @@ Acesse: http://localhost:3000
 ```
 ## 📝 Funcionalidades
 
-Cadastro de alunos com 4 notas
-
-Cálculo da média e situação
-
-Listagem paginada
-
-Exportação para Excel
-
-Geração de PDF de declaração
-
-Layout responsivo com Bootstrap
+* Cadastro de alunos com 4 notas
+* Cálculo da média e situação
+* Listagem paginada
+* Exportação para Excel
+* Geração de PDF de declaração
+* Layout responsivo com Bootstrap
 
 ## 👨‍💻 Autor
 
