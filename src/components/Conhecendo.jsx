@@ -10,7 +10,11 @@ const Conhecendo = () => {
             }}
         >
             <h1 style={{marginBottom:"48px"}}>Explore Nossos Espaços</h1>
-            <video src="video.mp4" muted autoPlay loop></video>
+            <video 
+                src="video.mp4" 
+                muted autoPlay loop
+                style={{width:"50%"}}
+            />
         </Container>
     )
 }

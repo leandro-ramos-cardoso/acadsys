@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 html, body {
+    font-family: "Nunito", sans-serif !important;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -13,8 +16,4 @@ html, body {
 
 main {
     flex: 1;
-}
-
-teste{
-    background-color: #e2e1e1;
 }

@@ -10,7 +10,7 @@ const CardsOperacoes = () => {
         <Container className="mb-4 d-flex justify-content-center gap-3">
             <Row className="g-5">
                 <Col>
-                    <div className="card text-bg-primary mb-3" style={{ width: '15rem', height: "28vh", cursor: 'pointer', borderRadius: '20px' }}>
+                    <div className="card text-bg-primary mb-3 " style={{ width: '15rem', height: "28vh", cursor: 'pointer', borderRadius: '20px' }}>
                         <div className="card-body text-center">
                             <h5 className="card-title mb-1 mt-3" style={{fontSize:"25px"}}>
                                 Total de alunos

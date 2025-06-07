@@ -23,27 +23,37 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto gap-4">
 
-                        <Nav.Link as={Link} to="/" className="d-flex align-items-center gap-1">
+                        <Nav.Link as={Link} to="/" className="d-flex align-items-center gap-1"
+                            style={{fontSize:"1.2rem"}}
+                        >
                             <FaHome className="me-1" />
                             Home
                         </Nav.Link>
 
-                        <Nav.Link as={Link} to="/cadastro" className="d-flex align-items-center gap-1">
+                        <Nav.Link as={Link} to="/cadastro" className="d-flex align-items-center gap-1"
+                            style={{fontSize:"1.2rem"}}
+                        >
                             <FaUserPlus className="me-1" />
                             Cadastrar
                         </Nav.Link>
 
-                        <Nav.Link as={Link} to="/listar" className="d-flex align-items-center gap-1">
+                        <Nav.Link as={Link} to="/listar" className="d-flex align-items-center gap-1"
+                            style={{fontSize:"1.2rem"}}
+                        >
                             <FaList className="me-1" />
                             Listar
                         </Nav.Link>
 
-                        <Nav.Link as={Link} to="/documentos" className="d-flex align-items-center gap-1">
+                        <Nav.Link as={Link} to="/documentos" className="d-flex align-items-center gap-1"
+                            style={{fontSize:"1.2rem"}}
+                        >
                             <FaFileAlt className="me-1" />
                             Documentos
                         </Nav.Link>
 
-                        <Nav.Link as={Link} to="/contato" className="d-flex align-items-center gap-1">
+                        <Nav.Link as={Link} to="/contato" className="d-flex align-items-center gap-1"
+                            style={{fontSize:"1.2rem"}}
+                        >
                             <FaPhone className="me-1" />
                             Contato
                         </Nav.Link>
