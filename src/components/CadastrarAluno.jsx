@@ -22,7 +22,8 @@ const CadastrarAluno = () => {
         const dadosDoForm = { nome, email, nota1, nota2, nota3, nota4 }
 
         try {
-            await axios.post(`${urlDoBackend}/alunos`, dadosDoForm)
+            // await axios.post(`${urlDoBackend}/alunos`, dadosDoForm)
+            await axios.post(`${urlDoBackend}`, dadosDoForm)
 
             toast.success("Aluno cadastrado com sucesso!", {
                 style: { background: '#0d6efd', color: '#fff' }

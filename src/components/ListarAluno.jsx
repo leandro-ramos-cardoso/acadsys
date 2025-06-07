@@ -17,7 +17,8 @@ const ListarAluno = () => {
     const itensPorPagina = 10
 
     useEffect(() => {
-        axios.get(`${urlDoBackend}/alunos`)
+        // axios.get(`${urlDoBackend}/alunos`)
+        axios.get(`${urlDoBackend}`)
             .then(response => {
                 setTimeout(() => {
                     setAlunos(response.data)
