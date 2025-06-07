@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Container, ListGroup, Pagination, Spinner, Table } from 'react-bootstrap'
+import { React, useEffect, useState } from 'react'
+import { Button, Container, Pagination, Spinner, Table } from 'react-bootstrap'
 import axios from 'axios'
 import { FaEdit, FaTrash } from 'react-icons/fa'
 
@@ -15,11 +15,10 @@ const ListarAluno = () => {
     useEffect(() => {
         axios.get(`${urlDoBackend}/alunos`)
             .then(response => {
-                // Simula atraso para que o spinner seja visível
                 setTimeout(() => {
                     setAlunos(response.data)
                     setCarregando(false)
-                }, 1000) // 1 segundo de espera
+                }, 1000)
             })
             .catch(error => {
                 console.error("Houve um erro para obter a listagem de alunos: ", error)
@@ -62,6 +61,8 @@ const ListarAluno = () => {
                                 <th>Nota 2</th>
                                 <th>Nota 3</th>
                                 <th>Nota 4</th>
+                                <th>Média</th>
+                                <th>Situação</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -84,6 +85,28 @@ const ListarAluno = () => {
                                     <td>{aluno.nota2}</td>
                                     <td>{aluno.nota3}</td>
                                     <td>{aluno.nota4}</td>
+                                    <td>
+                                        {(() => {
+                                            const n1 = parseFloat(aluno.nota1)
+                                            const n2 = parseFloat(aluno.nota2)
+                                            const n3 = parseFloat(aluno.nota3)
+                                            const n4 = parseFloat(aluno.nota4)
+                                            const media = ((n1 + n2 + n3 + n4) / 4).toFixed(1)
+                                            return media
+                                        })()}
+                                    </td>
+                                    <td>
+                                        {(() => {
+                                            const n1 = parseFloat(aluno.nota1)
+                                            const n2 = parseFloat(aluno.nota2)
+                                            const n3 = parseFloat(aluno.nota3)
+                                            const n4 = parseFloat(aluno.nota4)
+                                            const media = (n1 + n2 + n3 + n4) / 4
+                                            return <span style={{ color: media >= 7 ? 'green' : 'red', fontWeight: 'bold' }}>
+                                                {media >= 7 ? 'Aprovado' : 'Reprovado'}
+                                            </span>
+                                        })()}
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>

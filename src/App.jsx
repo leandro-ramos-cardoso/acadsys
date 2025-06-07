@@ -11,6 +11,8 @@ import { Container } from 'react-bootstrap'
 import DuvidasFrequentes from './components/DuvidasFrequentes'
 import Footer2 from './components/Footer2'
 import Conhecendo from './components/Conhecendo'
+import Endereco from './components/Endereco'
+
 
 const Home = () => (
   <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -19,6 +21,7 @@ const Home = () => (
       <img src="logo.svg" alt="" width="600px" style={{marginBottom:"100px", marginTop:"50px"}} />
       <CardsOperacoes />
       <Conhecendo />
+      {/* <Endereco /> */}
       <DuvidasFrequentes />
     </Container>
     <Footer2 />
