@@ -7,7 +7,12 @@ import { saveAs } from 'file-saver'
 
 
 const ListarAluno = () => {
-    const urlDoBackend = "http://localhost:3000"
+    
+    const urlDoBackend =
+        process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000/api/alunos'
+            : '/api/alunos' // em produção no Vercel
+
     const [alunos, setAlunos] = useState([])
     const [carregando, setCarregando] = useState(true)
 
