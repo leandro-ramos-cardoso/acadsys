@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="40" viewBox="0 0 300 80" fill="none">
+  <g fill="#2c2f33">
+    <!-- Livro -->
+    <path d="M40 20C35 15 25 15 20 20V60C25 55 35 55 40 60V20Z"></path>
+    <path d="M40 20C45 15 55 15 60 20V60C55 55 45 55 40 60V20Z"></path>
+    <!-- Texto -->
+    <text x="80" y="52" font-family="Arial, sans-serif" font-size="32" font-weight="bold">
+      ACADSYS
+    </text>
+  </g>
+</svg>

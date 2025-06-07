@@ -8,14 +8,22 @@ import CardsOperacoes from './components/CardsOperacoes'
 import './index.css'
 import EstruturaCarousel from './components/EstruturaCarousel'
 import { Container } from 'react-bootstrap'
+import DuvidasFrequentes from './components/DuvidasFrequentes'
+import Footer2 from './components/Footer2'
+import Conhecendo from './components/Conhecendo'
 
 const Home = () => (
-  <Container className="text-center mt-5">
-    <EstruturaCarousel />
-
-    <img src="logoMain.png" className="mx-auto d-block mb-5" style={{ maxWidth: '350px', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform = "scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform = "scale(1)"} />
-    <CardsOperacoes />
-  </Container>
+  <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <Container fluid className="text-center mt-5">
+      <EstruturaCarousel />
+      <img src="logo.svg" alt="" width="600px" style={{marginBottom:"100px", marginTop:"50px"}} />
+      <CardsOperacoes />
+      <Conhecendo />
+      <DuvidasFrequentes />
+    </Container>
+      <Footer2 />
+  </div>
+  
 )
 
 const App = () => {

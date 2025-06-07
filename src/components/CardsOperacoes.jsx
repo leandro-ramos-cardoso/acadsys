@@ -8,17 +8,19 @@ import 'react-toastify/dist/ReactToastify.css';
 const CardsOperacoes = () => {
     return (
         <Container className="mb-4 d-flex justify-content-center gap-3">
-            <Row>
+            <Row className="g-5">
                 <Col>
                     <div className="card text-bg-primary mb-3" style={{ width: '15rem', height: "28vh", cursor: 'pointer', borderRadius: '20px' }}>
                         <div className="card-body text-center">
-                            <h5 className="card-title mb-1 mt-3">Total de alunos</h5>
+                            <h5 className="card-title mb-1 mt-3" style={{fontSize:"25px"}}>
+                                Total de alunos
+                            </h5>
 
                             <div
                                 className="d-flex justify-content-center align-items-center"
                                 style={{ height: '200px' }}
                             >
-                                <FaUser size={124} color="#fff" />
+                                <FaUser size={100} color="#fff" />
                             </div>
                         </div>
                     </div>
@@ -27,13 +29,15 @@ const CardsOperacoes = () => {
                 <Col>
                     <div className="card text-bg-success mb-3" style={{ width: '15rem', height: "28vh", cursor: 'pointer', borderRadius: '20px' }}>
                         <div className="card-body text-center">
-                            <h5 className="card-title mb-1 mt-3">Média Geral</h5>
+                            <h5 className="card-title mb-1 mt-3" style={{fontSize:"25px"}}>
+                                Média Geral
+                            </h5>
 
                             <div
                                 className="d-flex justify-content-center align-items-center"
                                 style={{ height: '200px' }}
                             >
-                                <FaChartLine size={124} color="#fff" />
+                                <FaChartLine size={100} color="#fff" />
                             </div>
 
                         </div>
@@ -58,12 +62,14 @@ const CardsOperacoes = () => {
                         }}
                     >
                         <div className="card-body text-center">
-                            <h5 className="card-title mb-1 mt-3">Sobre</h5>
+                            <h5 className="card-title mb-1 mt-3" style={{fontSize:"25px"}}>
+                                Sobre
+                            </h5>
                             <div
                                 className="d-flex justify-content-center align-items-center"
                                 style={{ height: '200px' }}
                             >
-                                <FaInfoCircle size={124} color="#fff" />
+                                <FaInfoCircle size={100} color="#fff" />
                             </div>
                         </div>
                     </div>

@@ -1,13 +1,12 @@
 import React from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { FaHome, FaEdit, FaTrashAlt, FaUserPlus, FaList } from 'react-icons/fa'
+import { FaHome, FaTrashAlt, FaUserPlus, FaList, FaFileAlt, FaPhone } from 'react-icons/fa'
 
 const NavBar = () => {
     return (
         <Navbar className="p-4 mb-5" expand="lg" variant="dark" style={{ backgroundColor: "#2c2f33" }}>
             <Container>
-                {/* <Navbar.Brand as={Link} to="/">AcadSys</Navbar.Brand> */}
                 <Navbar.Brand href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 320 80" fill="none">
                         <rect width="320" height="80" fill="none" />
@@ -39,14 +38,14 @@ const NavBar = () => {
                             Listar
                         </Nav.Link>
 
-                        <Nav.Link as={Link} to="/editar" className="d-flex align-items-center gap-1">
-                            <FaEdit className="me-1" />
-                            Editar
+                        <Nav.Link as={Link} to="/documentos" className="d-flex align-items-center gap-1">
+                            <FaFileAlt className="me-1" />
+                            Documentos
                         </Nav.Link>
 
                         <Nav.Link as={Link} to="/remover" className="d-flex align-items-center gap-1">
-                            <FaTrashAlt className="me-1" />
-                            Remover
+                            <FaPhone className="me-1" />
+                            Contato
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
