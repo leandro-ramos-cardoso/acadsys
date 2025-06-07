@@ -21,9 +21,8 @@ const Home = () => (
       <Conhecendo />
       <DuvidasFrequentes />
     </Container>
-      <Footer2 />
+    <Footer2 />
   </div>
-  
 )
 
 const App = () => {

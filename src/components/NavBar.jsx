@@ -43,7 +43,7 @@ const NavBar = () => {
                             Documentos
                         </Nav.Link>
 
-                        <Nav.Link as={Link} to="/remover" className="d-flex align-items-center gap-1">
+                        <Nav.Link as={Link} to="/contato" className="d-flex align-items-center gap-1">
                             <FaPhone className="me-1" />
                             Contato
                         </Nav.Link>

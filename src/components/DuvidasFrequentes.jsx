@@ -7,7 +7,7 @@ const DuvidasFrequentes = () => {
     return (
         <Container className="mb-5 mt-5">
             <h1 className="mb-5 mt-5">
-                Duvidas Frequentes
+                Dúvidas Frequentes
             </h1>
 
             <Accordion>

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import RedesSociais from './RedesSociais';
 
 const Footer2 = () => {
     return (
-        <div style={{ backgroundColor: "#e2e1e1", padding: "40px 20px", fontSize: "18px" }}>
+        <div style={{ backgroundColor: "#e2e1e1", padding: "40px 20px", fontSize: "18px", marginTop:"120px"}}>
             <Container fluid>
                 <Row className="gy-4">
                     <Col xs={12} md={4} className="text-center text-md-start">
@@ -25,9 +26,10 @@ const Footer2 = () => {
                         <p>Cursos</p>
                         <p>Contato</p>
                         <Row className="text-center text-md-start">
-                            <Col xs={4}>Instagram</Col>
-                            <Col xs={4}>Facebook</Col>
-                            <Col xs={4}>LinkedIn</Col>
+                            <div>
+                                <br/>
+                                <RedesSociais />
+                            </div>
                         </Row>
                     </Col>
                 </Row>
