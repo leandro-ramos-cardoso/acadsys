@@ -7,14 +7,15 @@ import Footer from './components/Footer'
 import CardsOperacoes from './components/CardsOperacoes'
 import './index.css'
 import EstruturaCarousel from './components/EstruturaCarousel'
+import { Container } from 'react-bootstrap'
 
 const Home = () => (
-  <div className="text-center mt-5">
+  <Container className="text-center mt-5">
     <EstruturaCarousel />
 
     <img src="logoMain.png" className="mx-auto d-block mb-5" style={{ maxWidth: '350px', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform = "scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform = "scale(1)"} />
     <CardsOperacoes />
-  </div>
+  </Container>
 )
 
 const App = () => {
