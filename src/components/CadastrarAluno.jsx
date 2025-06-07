@@ -45,7 +45,7 @@ const CadastrarAluno = () => {
     }
 
     return (
-        <Container>
+        <Container style={{marginTop:"-76px"}}>
             <div className="d-flex justify-content-center align-items-center" style={{ minHeight: 'calc(100vh - 140px)' }}>
                 <Card style={{ width: '100%', maxWidth: '600px' }} className="p-4 shadow">
                     <Card.Body>
@@ -93,7 +93,6 @@ const CadastrarAluno = () => {
                                             type="number"
                                             value={nota2}
                                             onChange={(e) => setNota2(e.target.value)}
-                                            required
                                         />
                                     </Col>
                                 </Row>
@@ -107,7 +106,6 @@ const CadastrarAluno = () => {
                                             type="number"
                                             value={nota3}
                                             onChange={(e) => setNota3(e.target.value)}
-                                            required
                                         />
                                     </Col>
                                     <Col>
@@ -116,7 +114,6 @@ const CadastrarAluno = () => {
                                             type="number"
                                             value={nota4}
                                             onChange={(e) => setNota4(e.target.value)}
-                                            required
                                         />
                                     </Col>
                                 </Row>

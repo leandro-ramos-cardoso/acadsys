@@ -1,7 +1,9 @@
 import { React, useEffect, useState } from 'react'
-import { Button, Container, Pagination, Spinner, Table } from 'react-bootstrap'
+import { Button, Container, Pagination, Spinner, Table, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
-import { FaEdit, FaTrash } from 'react-icons/fa'
+import { FaEdit, FaTrash, FaFileExcel } from 'react-icons/fa'
+import * as XLSX from 'xlsx'
+import { saveAs } from 'file-saver'
 
 
 const ListarAluno = () => {
@@ -10,7 +12,7 @@ const ListarAluno = () => {
     const [carregando, setCarregando] = useState(true)
 
     const [paginaAtual, setPaginaAtual] = useState(1)
-    const itensPorPagina = 12
+    const itensPorPagina = 10
 
     useEffect(() => {
         axios.get(`${urlDoBackend}/alunos`)
@@ -38,9 +40,53 @@ const ListarAluno = () => {
         setPaginaAtual(numero)
     }
 
+
+    const exportarParaExcel = () => {
+        const dadosExportacao = alunos.map(aluno => {
+            const n1 = parseFloat(aluno.nota1)
+            const n2 = parseFloat(aluno.nota2)
+            const n3 = parseFloat(aluno.nota3)
+            const n4 = parseFloat(aluno.nota4)
+            const media = ((n1 + n2 + n3 + n4) / 4).toFixed(1)
+
+            return {
+                Nome: aluno.nome,
+                Email: aluno.email,
+                'Nota 1': aluno.nota1,
+                'Nota 2': aluno.nota2,
+                'Nota 3': aluno.nota3,
+                'Nota 4': aluno.nota4,
+                Média: media,
+                Situação: media >= 7 ? 'Aprovado' : 'Reprovado'
+            }
+        })
+
+        const ws = XLSX.utils.json_to_sheet(dadosExportacao)
+        const wb = XLSX.utils.book_new()
+        XLSX.utils.book_append_sheet(wb, ws, 'Alunos')
+        const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' })
+        const blob = new Blob([excelBuffer], { type: 'application/octet-stream' })
+        saveAs(blob, 'lista-de-alunos.xlsx')
+    }
+
     return (
-        <Container className="mt-4">
-            <h1 className="mb-4">Listagem de alunos</h1>
+        <Container style={{ marginTop: "-15px" }}>
+
+            <Row>
+                <Col>
+                    <h1 className="mb-4">Listagem de alunos</h1>
+                </Col>
+
+                <Col>
+                    <div className="d-flex justify-content-end">
+                        <Button variant="success" onClick={exportarParaExcel}>
+                            <FaFileExcel className="me-2" />
+                            Exportar
+                        </Button>
+                    </div>
+
+                </Col>
+            </Row>
 
             {carregando ? (
                 <div className="d-flex justify-content-center align-items-center" style={{ height: '200px' }}>
@@ -102,7 +148,8 @@ const ListarAluno = () => {
                                             const n3 = parseFloat(aluno.nota3)
                                             const n4 = parseFloat(aluno.nota4)
                                             const media = (n1 + n2 + n3 + n4) / 4
-                                            return <span style={{ color: media >= 7 ? 'green' : 'red', fontWeight: 'bold' }}>
+                                            return <span style=
+                                                {{ color: media >= 7 ? 'green' : 'red', fontWeight: 'bold' }}>
                                                 {media >= 7 ? 'Aprovado' : 'Reprovado'}
                                             </span>
                                         })()}

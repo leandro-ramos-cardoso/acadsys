@@ -11,7 +11,8 @@ import { Container } from 'react-bootstrap'
 import DuvidasFrequentes from './components/DuvidasFrequentes'
 import Footer2 from './components/Footer2'
 import Conhecendo from './components/Conhecendo'
-import Endereco from './components/Endereco'
+import Documentos from './components/Documentos'
+import Contato from './components/Contato'
 
 
 const Home = () => (
@@ -38,6 +39,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/cadastro" element={<CadastrarAluno />} />
             <Route path="/listar" element={<ListarAluno />} />
+            <Route path="/documentos" element={<Documentos />} />
+            <Route path="/contato" element={<Contato /> } />
           </Routes>
         </main>
         <Footer />

@@ -151,6 +151,15 @@
       "nota2": "6",
       "nota3": "7.5",
       "nota4": "7.5"
+    },
+    {
+      "id": "9ada",
+      "nome": "Fernando Maciel",
+      "email": "fern@gmail.com",
+      "nota1": "5",
+      "nota2": "6",
+      "nota3": "5",
+      "nota4": "3"
     }
   ]
 }
