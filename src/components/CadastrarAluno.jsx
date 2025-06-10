@@ -7,8 +7,8 @@ import 'react-toastify/dist/ReactToastify.css'
 const CadastrarAluno = () => {
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
-    // const urlDoBackend = "http://localhost:3000"
-    const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
+    const urlDoBackend = "http://localhost:3000"
+    // const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
 
 
     const [nota1, setNota1] = useState("")
@@ -22,8 +22,8 @@ const CadastrarAluno = () => {
         const dadosDoForm = { nome, email, nota1, nota2, nota3, nota4 }
 
         try {
-            // await axios.post(`${urlDoBackend}/alunos`, dadosDoForm)
-            await axios.post(`${urlDoBackend}`, dadosDoForm)
+            await axios.post(`${urlDoBackend}/alunos`, dadosDoForm)
+            // await axios.post(`${urlDoBackend}`, dadosDoForm)
 
             toast.success("Aluno cadastrado com sucesso!", {
                 style: { background: '#0d6efd', color: '#fff' }

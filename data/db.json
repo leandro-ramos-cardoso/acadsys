@@ -19,24 +19,6 @@
       "nota4": 7.5
     },
     {
-      "id": "3",
-      "nome": "José da Silva",
-      "email": "jose@gmail.com",
-      "nota1": 9,
-      "nota2": 8.5,
-      "nota3": 9.5,
-      "nota4": 10
-    },
-    {
-      "id": "d836",
-      "nome": "Testando Silva",
-      "email": "admin@email.com",
-      "nota1": "5",
-      "nota2": "5.5",
-      "nota3": "6",
-      "nota4": "7"
-    },
-    {
       "id": "5885",
       "nome": "a",
       "email": "a@q",
@@ -61,11 +43,6 @@
       "email": "a@a"
     },
     {
-      "id": "3f95",
-      "nome": "a",
-      "email": "a@a"
-    },
-    {
       "id": "8992",
       "nome": "a",
       "email": "a@a"
@@ -86,27 +63,7 @@
       "email": "a@a"
     },
     {
-      "id": "e73d",
-      "nome": "a",
-      "email": "a@a"
-    },
-    {
       "id": "6587",
-      "nome": "a",
-      "email": "a@a"
-    },
-    {
-      "id": "27b5",
-      "nome": "a",
-      "email": "a@a"
-    },
-    {
-      "id": "2c76",
-      "nome": "a",
-      "email": "a@a"
-    },
-    {
-      "id": "a1fd",
       "nome": "a",
       "email": "a@a"
     },
@@ -126,15 +83,6 @@
       "email": "a!@aaa"
     },
     {
-      "id": "f6b0",
-      "nome": "asasaszzzzz",
-      "email": "zzz@a",
-      "nota1": "1",
-      "nota2": "1",
-      "nota3": "2",
-      "nota4": "3"
-    },
-    {
       "id": "e195",
       "nome": "Manuela Medeiros Cardoso",
       "email": "manuelamc@gmail.com",
@@ -142,24 +90,6 @@
       "nota2": "9",
       "nota3": "8",
       "nota4": "9.5"
-    },
-    {
-      "id": "7ce4",
-      "nome": "Fulano de Tal",
-      "email": "fulano@gmail.com",
-      "nota1": "5",
-      "nota2": "6",
-      "nota3": "7.5",
-      "nota4": "7.5"
-    },
-    {
-      "id": "9ada",
-      "nome": "Fernando Maciel",
-      "email": "fern@gmail.com",
-      "nota1": "5",
-      "nota2": "6",
-      "nota3": "5",
-      "nota4": "3"
     }
   ]
 }

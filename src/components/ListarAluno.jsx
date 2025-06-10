@@ -4,11 +4,61 @@ import axios from 'axios'
 import { FaEdit, FaTrash, FaFileExcel } from 'react-icons/fa'
 import * as XLSX from 'xlsx'
 import { saveAs } from 'file-saver'
+import Swal from 'sweetalert2';
 
+const ExcluirAluno = async (id) => {
+    const urlDoBackend = "http://localhost:3000"
+    try {
+        const result = await Swal.fire({
+            title: 'Você tem certeza?',
+            text: "Você não poderá reverter esta ação!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sim',
+            cancelButtonText: 'Cancelar',
+            customClass: {
+                confirmButton: 'btn btn-primary me-2',
+                cancelButton: 'btn btn-danger',
+                title: 'fw-semibold fs-4',
+                popup: 'p-4 rounded',
+                actions: 'justify-content-center gap-2'
+            },
+            buttonsStyling: false
+        })
+
+        if (result.isConfirmed) {
+            await axios.delete(`${urlDoBackend}/alunos/${id}`)
+            Swal.fire
+                ({
+                    title: 'Deletado!',
+                    text: 'O aluno foi deletado com sucesso.',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        confirmButton: 'btn btn-success',
+                        title: 'fw-semibold fs-4',
+                        popup: 'p-4 rounded'
+                    },
+                    buttonsStyling: false
+                })
+            return true
+        }
+        return false
+    } catch (error) {
+        console.error("Houve um erro ao deletar o aluno: ", error)
+        Swal.fire(
+            'Erro',
+            'Houve um erro ao tentar deletar o aluno. Por favor, tente novamente.',
+            'error'
+        )
+        return false
+    }
+}
 
 const ListarAluno = () => {
-    
-    const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
+
+    // const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
+    const urlDoBackend = "http://localhost:3000"
 
     const [alunos, setAlunos] = useState([])
     const [carregando, setCarregando] = useState(true)
@@ -17,8 +67,8 @@ const ListarAluno = () => {
     const itensPorPagina = 10
 
     useEffect(() => {
-        // axios.get(`${urlDoBackend}/alunos`)
-        axios.get(`${urlDoBackend}`)
+        axios.get(`${urlDoBackend}/alunos`)
+            // axios.get(`${urlDoBackend}`)
             .then(response => {
                 setTimeout(() => {
                     setAlunos(response.data)
@@ -122,7 +172,12 @@ const ListarAluno = () => {
                                             <Button variant="primary">
                                                 <FaEdit />
                                             </Button>
-                                            <Button variant="danger">
+                                            <Button variant="danger" onClick={async () => {
+                                                const sucesso = await ExcluirAluno(aluno.id)
+                                                if (sucesso) {
+                                                    setAlunos(prev => prev.filter(a => a.id !== aluno.id))
+                                                }
+                                            }}>
                                                 <FaTrash />
                                             </Button>
                                         </div>
