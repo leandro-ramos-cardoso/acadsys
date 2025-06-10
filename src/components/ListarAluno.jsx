@@ -4,7 +4,10 @@ import axios from 'axios'
 import { FaEdit, FaTrash, FaFileExcel } from 'react-icons/fa'
 import * as XLSX from 'xlsx'
 import { saveAs } from 'file-saver'
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'
+import EditarAluno from './EditarAluno';
+import { Modal } from 'react-bootstrap';
+
 
 const ExcluirAluno = async (id) => {
     const urlDoBackend = "http://localhost:3000"
@@ -65,6 +68,13 @@ const ListarAluno = () => {
 
     const [paginaAtual, setPaginaAtual] = useState(1)
     const itensPorPagina = 10
+
+    const [alunoEmEdicao, setAlunoEmEdicao] = useState(null);
+
+    const [mostrarModal, setMostrarModal] = useState(false);
+    const [alunoSelecionado, setAlunoSelecionado] = useState(null);
+
+
 
     useEffect(() => {
         axios.get(`${urlDoBackend}/alunos`)
@@ -169,9 +179,16 @@ const ListarAluno = () => {
                                 <tr key={aluno.id}>
                                     <td>
                                         <div className="d-flex gap-2 justify-content-center">
-                                            <Button variant="primary">
+                                            <Button
+                                                variant="primary"
+                                                onClick={() => {
+                                                    setAlunoSelecionado(aluno.id);
+                                                    setMostrarModal(true);
+                                                }}
+                                            >
                                                 <FaEdit />
                                             </Button>
+
                                             <Button variant="danger" onClick={async () => {
                                                 const sucesso = await ExcluirAluno(aluno.id)
                                                 if (sucesso) {
@@ -216,6 +233,31 @@ const ListarAluno = () => {
                             ))}
                         </tbody>
                     </Table>
+
+                    <Modal
+                        show={mostrarModal}
+                        onHide={() => setMostrarModal(false)}
+                        centered
+                        backdrop="static"
+                        size="lg"
+                    >
+                        <Modal.Header closeButton>
+                            <Modal.Title>Editar Aluno</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            {alunoSelecionado && (
+                                <EditarAluno
+                                    id={alunoSelecionado}
+                                    onSucesso={() => {
+                                        setMostrarModal(false);
+                                        axios.get(`${urlDoBackend}/alunos`).then(res => setAlunos(res.data));
+                                    }}
+                                />
+                            )}
+                        </Modal.Body>
+                    </Modal>
+
+
 
                     <Pagination className="justify-content-center mt-4">
                         <Pagination.First onClick={() => setPaginaAtual(1)} disabled={paginaAtual === 1} />
