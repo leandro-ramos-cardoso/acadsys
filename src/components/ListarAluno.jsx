@@ -8,8 +8,11 @@ import Swal from 'sweetalert2'
 import EditarAluno from './EditarAluno';
 import { Modal } from 'react-bootstrap';
 
+
 const ExcluirAluno = async (id) => {
-    const urlDoBackend = "http://localhost:3000"
+    // const urlDoBackend = "http://localhost:3000"
+    const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
+
     try {
         const result = await Swal.fire({
             title: 'Você tem certeza?',
@@ -60,7 +63,8 @@ const ExcluirAluno = async (id) => {
 const ListarAluno = () => {
 
     // const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
-    const urlDoBackend = "http://localhost:3000"
+    // const urlDoBackend = "http://localhost:3000"
+    const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
 
     const [alunos, setAlunos] = useState([])
     const [carregando, setCarregando] = useState(true)

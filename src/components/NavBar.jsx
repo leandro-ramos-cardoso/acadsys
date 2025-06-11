@@ -14,7 +14,7 @@ const NavBar = () => {
                             <path d="M40 20C35 15 25 15 20 20V60C25 55 35 55 40 60V20Z" fill="#FFFFFF" />
                             <path d="M40 20C45 15 55 15 60 20V60C55 55 45 55 40 60V20Z" fill="#FFFFFF" />
                         </g>
-                        <text x="80" y="54" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="40" font-weight="bold">
+                        <text x="80" y="54" fill="#FFFFFF" fontFamily="Arial, sans-serif" fontSize="40" fontWeight="bold">
                             ACADSYS
                         </text>
                     </svg>
