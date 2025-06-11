@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Button, Container, Form, Row, Col } from 'react-bootstrap'
 import { ToastContainer, toast } from 'react-toastify'
