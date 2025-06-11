@@ -8,9 +8,13 @@ import Swal from 'sweetalert2'
 import EditarAluno from './EditarAluno';
 import { Modal } from 'react-bootstrap';
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const ExcluirAluno = async (id) => {
-    const urlDoBackend = "http://localhost:3000"
+    // const urlDoBackend = "http://localhost:3000"
+    const urlDoBackend = process.env.urlDoBackend;
     try {
         const result = await Swal.fire({
             title: 'Você tem certeza?',
