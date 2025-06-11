@@ -19,7 +19,7 @@ const Home = () => (
   <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
     <Container fluid className="text-center mt-5">
       <EstruturaCarousel />
-      <img src="logo.svg" alt="" width="600px" style={{marginBottom:"100px", marginTop:"50px"}} />
+      {/* <img src="logo.svg" alt="" width="600px" style={{marginBottom:"100px", marginTop:"50px"}} /> */}
       <CardsOperacoes />
       <Conhecendo />
       {/* <Endereco /> */}

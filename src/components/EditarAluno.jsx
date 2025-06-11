@@ -68,7 +68,7 @@ const EditarAluno = ({ id, onSucesso }) => {
                 </Form.Group>
 
                 <Row className="mb-3">
-                    <Col>
+                    <Col xs={12} md={6}>
                         <Form.Label>Nota 1:</Form.Label>
                         <Form.Control
                             type="number"
@@ -90,7 +90,7 @@ const EditarAluno = ({ id, onSucesso }) => {
                 </Row>
 
                 <Row className="mb-4">
-                    <Col>
+                    <Col xs={12} md={6}>
                         <Form.Label>Nota 3:</Form.Label>
                         <Form.Control
                             type="number"
@@ -111,7 +111,7 @@ const EditarAluno = ({ id, onSucesso }) => {
                 </Row>
 
                 <Row>
-                    <Col>
+                    <Col xs={12} md={6}>
                         <div className="d-grid">
                             <Button variant="primary" type="submit">
                                 Salvar Alterações

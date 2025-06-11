@@ -83,7 +83,7 @@ const CadastrarAluno = () => {
 
                             <Form.Group className="mb-4">
                                 <Row>
-                                    <Col>
+                                    <Col xs={12} md={6}>
                                         <Form.Label>Nota 1:</Form.Label>
                                         <Form.Control
                                             type="number"
@@ -105,7 +105,7 @@ const CadastrarAluno = () => {
 
                             <Form.Group className="mb-4">
                                 <Row>
-                                    <Col>
+                                    <Col xs={12} md={6}>
                                         <Form.Label>Nota 3:</Form.Label>
                                         <Form.Control
                                             type="number"
@@ -125,7 +125,7 @@ const CadastrarAluno = () => {
                             </Form.Group>
 
                             <Row>
-                                <Col>
+                                <Col xs={12} md={6}>
                                     <div className="d-grid">
                                         <Button variant="primary" type="submit">
                                             Cadastrar

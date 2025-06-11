@@ -139,11 +139,11 @@ const ListarAluno = () => {
         <Container style={{ marginTop: "-15px" }}>
 
             <Row>
-                <Col>
+                <Col xs={12} md={6}>
                     <h1 className="mb-4">Listagem de alunos</h1>
                 </Col>
 
-                <Col>
+                <Col xs={12} md={6}>
                     <div className="d-flex justify-content-end">
                         <Button variant="success" onClick={exportarParaExcel}>
                             <FaFileExcel className="me-2" />
