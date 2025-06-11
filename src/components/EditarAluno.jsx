@@ -4,15 +4,11 @@ import { Button, Container, Form, Row, Col } from 'react-bootstrap'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-import dotenv from 'dotenv';
-dotenv.config();
-
 const EditarAluno = ({ id, onSucesso }) => {
     const [form, setForm] = useState({
         nome: "", email: "", nota1: "", nota2: "", nota3: "", nota4: ""});
 
-    // const urlDoBackend = "http://localhost:3000";
-    const urlDoBackend = process.env.urlDoBackend;
+    const urlDoBackend = "http://localhost:3000";
 
     useEffect(() => {
         axios.get(`${urlDoBackend}/alunos/${id}`)

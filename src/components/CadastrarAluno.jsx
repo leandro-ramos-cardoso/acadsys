@@ -4,15 +4,10 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-import dotenv from 'dotenv';
-dotenv.config();
-
 const CadastrarAluno = () => {
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
-    const urlDoBackend = process.env.urlDoBackend;
-
-    //const urlDoBackend = "http://localhost:3000"
+    const urlDoBackend = "http://localhost:3000"
     // const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
 
 
@@ -27,7 +22,7 @@ const CadastrarAluno = () => {
         const dadosDoForm = { nome, email, nota1, nota2, nota3, nota4 }
 
         try {
-            await axios.post(urlDoBackend, dadosDoForm)
+            await axios.post(`${urlDoBackend}/alunos`, dadosDoForm)
             // await axios.post(`${urlDoBackend}`, dadosDoForm)
 
             toast.success("Aluno cadastrado com sucesso!", {
