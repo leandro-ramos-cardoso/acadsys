@@ -6,18 +6,11 @@ import { FaHome, FaTrashAlt, FaUserPlus, FaList, FaFileAlt, FaPhone } from 'reac
 const NavBar = () => {
     return (
         <Navbar className="p-4 mb-5" expand="lg" variant="dark" style={{ backgroundColor: "#2c2f33" }}>
-            <Container>
-                <Navbar.Brand href="/">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 320 80" fill="none">
-                        <rect width="320" height="80" fill="none" />
-                        <g transform="scale(1.3) translate(-10, -10)">
-                            <path d="M40 20C35 15 25 15 20 20V60C25 55 35 55 40 60V20Z" fill="#FFFFFF" />
-                            <path d="M40 20C45 15 55 15 60 20V60C55 55 45 55 40 60V20Z" fill="#FFFFFF" />
-                        </g>
-                        <text x="80" y="54" fill="#FFFFFF" fontFamily="Arial, sans-serif" fontSize="40" fontWeight="bold">
-                            ACADSYS
-                        </text>
-                    </svg>
+            <Container fluid>
+                <Navbar.Brand href="/" className="me-5">
+                    <span style={{fontSize:"2rem"}}>
+                        ACADSYS
+                    </span>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

@@ -17,3 +17,56 @@ html, body {
 main {
     flex: 1;
 }
+
+/* Estilos para o carrossel */
+.carousel {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    height: 100%;
+}
+
+.carousel-inner {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform .6s ease-in-out;
+}
+
+.carousel-item.active {
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+    transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+    transform: translateX(-100%);
+}
+
+.carousel-item img {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    position: relative !important;
+}

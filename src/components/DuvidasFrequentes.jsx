@@ -6,7 +6,7 @@ import Accordion from 'react-bootstrap/Accordion';
 const DuvidasFrequentes = () => {
     return (
         <Container className="mb-5 mt-5">
-            <h1 className="mb-5 mt-5">
+            <h1 className="mb-5">
                 Dúvidas Frequentes
             </h1>
 

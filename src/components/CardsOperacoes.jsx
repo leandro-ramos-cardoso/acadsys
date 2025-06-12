@@ -7,10 +7,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const CardsOperacoes = () => {
     return (
-        <Container className="mb-4 d-flex justify-content-center gap-3">
-            <Row className="g-5">
-                <Col>
-                    <div className="card text-bg-primary mb-3 " style={{ width: '15rem', height: "28vh", cursor: 'pointer', borderRadius: '20px' }}>
+        <Container className="mb-5">
+            <h1 className="d-flex flex-column align-items-center"
+            style={{marginBottom:"6rem"}}>Acompanhe Nossos Números</h1>
+            <Row className="justify-content-center g-5">
+                <Col xs={12} md={4} lg={3} className="d-flex justify-content-center">
+                    <div className="card text-bg-primary mb-3" style={{ width: '15rem', height: "28vh", cursor: 'pointer', borderRadius: '20px' }}>
                         <div className="card-body text-center">
                             <h5 className="card-title mb-1 mt-3" style={{fontSize:"25px"}}>
                                 Total de alunos
@@ -26,7 +28,7 @@ const CardsOperacoes = () => {
                     </div>
                 </Col>
 
-                <Col>
+                <Col xs={12} md={4} lg={3} className="d-flex justify-content-center">
                     <div className="card text-bg-success mb-3" style={{ width: '15rem', height: "28vh", cursor: 'pointer', borderRadius: '20px' }}>
                         <div className="card-body text-center">
                             <h5 className="card-title mb-1 mt-3" style={{fontSize:"25px"}}>
@@ -39,13 +41,11 @@ const CardsOperacoes = () => {
                             >
                                 <FaChartLine size={100} color="#fff" />
                             </div>
-
                         </div>
-
                     </div>
                 </Col>
 
-                <Col>
+                <Col xs={12} md={4} lg={3} className="d-flex justify-content-center">
                     <div
                         onClick={() =>
                             toast.success("Sobre a Cadsys", {
@@ -87,10 +87,7 @@ const CardsOperacoes = () => {
                 theme="colored"
             />
         </Container>
-
-        
     )
-    
 }
 
 export default CardsOperacoes

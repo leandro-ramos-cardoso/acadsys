@@ -17,12 +17,12 @@ import Contato from './components/Contato'
 
 const Home = () => (
   <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-    <Container fluid className="text-center mt-5">
+    <div style={{ marginTop: '-5rem' }}>
       <EstruturaCarousel />
-      {/* <img src="logo.svg" alt="" width="600px" style={{marginBottom:"100px", marginTop:"50px"}} /> */}
+    </div>
+    <Container fluid className="text-center">
       <CardsOperacoes />
       <Conhecendo />
-      {/* <Endereco /> */}
       <DuvidasFrequentes />
     </Container>
     <Footer2 />

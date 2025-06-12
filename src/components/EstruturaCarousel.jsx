@@ -1,33 +1,57 @@
 import React from 'react'
-import { Container, Carousel } from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap'
 
 const EstruturaCarousel = () => {
     return (
-        <Container className="mb-5 mt-5">
-            <Carousel>
-                <Carousel.Item interval={5000}>
-                    <img
-                        src="school2.png"
-                        alt="First slide"
-                        className="d-block w-100"
-                    />
+        <div className="carousel-container" style={{ width: '100%', margin: 0, padding: 0, height: 'auto', marginTop: '2rem', marginBottom: '10rem' }}>
+            <Carousel fade interval={3000}>
+                <Carousel.Item>
+                    <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <img
+                            src="school2.png"
+                            alt="First slide"
+                            style={{ 
+                                width: '100%',
+                                height: 'auto',
+                                objectFit: 'contain',
+                                margin: 0,
+                                padding: 0
+                            }}
+                        />
+                    </div>
                 </Carousel.Item>
-                <Carousel.Item interval={5000}>
-                    <img
-                        src="school3.png"
-                        alt="First slide"
-                        className="d-block w-100"
-                    />
+                <Carousel.Item>
+                    <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <img
+                            src="school3.png"
+                            alt="Second slide"
+                            style={{ 
+                                width: '100%',
+                                height: 'auto',
+                                objectFit: 'contain',
+                                margin: 0,
+                                padding: 0
+                            }}
+                        />
+                    </div>
                 </Carousel.Item>
-                <Carousel.Item interval={5000}>
-                    <img
-                        src="school4.png"
-                        alt="First slide"
-                        className="d-block w-100"
-                    />
+                <Carousel.Item>
+                    <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <img
+                            src="school4.png"
+                            alt="Third slide"
+                            style={{ 
+                                width: '100%',
+                                height: 'auto',
+                                objectFit: 'contain',
+                                margin: 0,
+                                padding: 0
+                            }}
+                        />
+                    </div>
                 </Carousel.Item>
             </Carousel>
-        </Container>
+        </div>
     )
 }
 

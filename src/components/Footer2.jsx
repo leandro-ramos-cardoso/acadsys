@@ -4,7 +4,7 @@ import RedesSociais from './RedesSociais';
 
 const Footer2 = () => {
     return (
-        <div style={{ backgroundColor: "#e2e1e1", padding: "40px 20px", fontSize: "18px", marginTop:"120px"}}>
+        <div style={{ backgroundColor: "#e2e1e1", padding: "40px 20px", fontSize: "18px", marginTop:"6rem"}}>
             <Container fluid>
                 <Row className="gy-4">
                     <Col xs={12} md={4} className="text-center text-md-start">

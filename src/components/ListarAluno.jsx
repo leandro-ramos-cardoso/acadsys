@@ -192,7 +192,7 @@ const ListarAluno = () => {
                                                 <FaEdit />
                                             </Button>
 
-                                            <Button variant="danger" onClick={async () => {
+                                            <Button variant="secondary" onClick={async () => {
                                                 const sucesso = await ExcluirAluno(aluno.id)
                                                 if (sucesso) {
                                                     setAlunos(prev => prev.filter(a => a.id !== aluno.id))
