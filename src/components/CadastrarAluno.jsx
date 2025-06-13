@@ -7,9 +7,7 @@ import 'react-toastify/dist/ReactToastify.css'
 const CadastrarAluno = () => {
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
-    // const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
-    const urlDoBackend = "https://flask-api-alunos.onrender.com";
-
+    const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
 
     // const urlDoBackend = "http://localhost:3000"
     // const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
@@ -33,27 +31,21 @@ const CadastrarAluno = () => {
 }
 
         try {
-    const response = await axios.post("https://flask-api-alunos.onrender.com/alunos", dadosDoForm)
+            await axios.post(`${urlDoBackend}/alunos`, dadosDoForm)
+            // await axios.post(`${urlDoBackend}`, dadosDoForm)
 
-    toast.success("Aluno cadastrado com sucesso!", {
-        style: { background: '#0d6efd', color: '#fff' }
-    })
+            toast.success("Aluno cadastrado com sucesso!", {
+                style: { background: '#0d6efd', color: '#fff' }
+            })
 
-    handleReset()
-} catch (error) {
-    console.error("Erro ao cadastrar aluno:", error)
-
-    // Se for erro de CORS ou rede
-    if (error.code === "ERR_NETWORK") {
-        toast.error("Erro de rede ou CORS: verifique se o backend está aceitando requisições.", {
-            style: { background: '#dc3545', color: '#fff' }
-        })
-    } else {
-        toast.error("Erro ao cadastrar aluno.", {
-            style: { background: '#dc3545', color: '#fff' }
-        })
+            handleReset()
+        } catch (error) {
+            toast.error("Erro ao cadastrar aluno.", {
+                style: { background: '#dc3545', color: '#fff' }
+            })
+            console.error(error)
+        }
     }
-}}
 
     const handleReset = () => {
         setNome("")
