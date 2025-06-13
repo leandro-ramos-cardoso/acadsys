@@ -13,7 +13,7 @@ import Footer2 from './components/Footer2'
 import Conhecendo from './components/Conhecendo'
 import Documentos from './components/Documentos'
 import Contato from './components/Contato'
-
+import Opnioes from './components/Opnioes'
 
 const Home = () => (
   <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -23,6 +23,7 @@ const Home = () => (
     <Container fluid className="text-center">
       <CardsOperacoes />
       <Conhecendo />
+      {/* <Opnioes /> */}
       <DuvidasFrequentes />
     </Container>
     <Footer2 />

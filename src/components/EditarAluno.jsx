@@ -25,9 +25,13 @@ const EditarAluno = ({ id, onSucesso }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`${urlDoBackend}/alunos/${id}`, form);
-            toast.success('Aluno atualizado com sucesso!');
-            onSucesso();
+            await axios.put(`${urlDoBackend}/alunos/${id}`, {
+            ...form,
+            nota1: parseFloat(form.nota1),
+            nota2: parseFloat(form.nota2),
+            nota3: parseFloat(form.nota3),
+            nota4: parseFloat(form.nota4)
+})
         } catch (err) {
             console.error('Erro ao atualizar aluno:', err);
             toast.error('Erro ao atualizar aluno!');

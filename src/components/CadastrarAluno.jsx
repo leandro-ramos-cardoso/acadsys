@@ -21,7 +21,14 @@ const CadastrarAluno = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const dadosDoForm = { nome, email, nota1, nota2, nota3, nota4 }
+        const dadosDoForm = {
+    nome,
+    email,
+    nota1: parseFloat(nota1),
+    nota2: parseFloat(nota2),
+    nota3: parseFloat(nota3),
+    nota4: parseFloat(nota4)
+}
 
         try {
             await axios.post(`${urlDoBackend}/alunos`, dadosDoForm)
