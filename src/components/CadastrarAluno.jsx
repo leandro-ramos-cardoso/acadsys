@@ -12,7 +12,6 @@ const CadastrarAluno = () => {
     // const urlDoBackend = "http://localhost:3000"
     // const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
 
-
     const [nota1, setNota1] = useState("")
     const [nota2, setNota2] = useState("")
     const [nota3, setNota3] = useState("")
