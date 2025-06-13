@@ -32,32 +32,22 @@ const ExcluirAluno = async (id) => {
         })
 
         if (result.isConfirmed) {
-            await axios.delete(`${urlDoBackend}/alunos/${id}`)
-            Swal.fire
-                ({
-                    title: 'Deletado!',
-                    text: 'O aluno foi deletado com sucesso.',
-                    icon: 'success',
-                    confirmButtonText: 'OK',
-                    customClass: {
-                        confirmButton: 'btn btn-success',
-                        title: 'fw-semibold fs-4',
-                        popup: 'p-4 rounded'
-                    },
-                    buttonsStyling: false
-                })
-            return true
-        }
-        return false
-    } catch (error) {
-        console.error("Houve um erro ao deletar o aluno: ", error)
-        Swal.fire(
-            'Erro',
-            'Houve um erro ao tentar deletar o aluno. Por favor, tente novamente.',
-            'error'
-        )
-        return false
-    }
+            await axios.delete(`https://flask-api-alunos.onrender.com/alunos/${id}`);
+
+Swal.fire({
+    title: 'Deletado!',
+    text: 'O aluno foi deletado com sucesso.',
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        confirmButton: 'btn btn-success',
+        title: 'fw-semibold fs-4',
+        popup: 'p-4 rounded'
+    },
+    buttonsStyling: false
+});
+return true;
+
 }
 
 const ListarAluno = () => {
@@ -80,19 +70,19 @@ const ListarAluno = () => {
 
 
     useEffect(() => {
-        axios.get(`${urlDoBackend}/alunos`)
-            // axios.get(`${urlDoBackend}`)
-            .then(response => {
-                setTimeout(() => {
-                    setAlunos(response.data)
-                    setCarregando(false)
-                }, 1000)
-            })
-            .catch(error => {
-                console.error("Houve um erro para obter a listagem de alunos: ", error)
-                setCarregando(false)
-            })
-    }, [])
+    axios.get("https://flask-api-alunos.onrender.com/alunos")
+        .then(response => {
+            setTimeout(() => {
+                setAlunos(response.data);
+                setCarregando(false);
+            }, 1000);
+        })
+        .catch(error => {
+            console.error("Houve um erro para obter a listagem de alunos: ", error);
+            setCarregando(false);
+        });
+}, []);
+
 
 
     const totalPaginas = Math.ceil(alunos.length / itensPorPagina)

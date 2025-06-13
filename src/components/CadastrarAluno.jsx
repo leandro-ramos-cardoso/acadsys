@@ -31,21 +31,27 @@ const CadastrarAluno = () => {
 }
 
         try {
-            await axios.post(`${urlDoBackend}/alunos`, dadosDoForm)
-            // await axios.post(`${urlDoBackend}`, dadosDoForm)
+    const response = await axios.post("https://flask-api-alunos.onrender.com/alunos", dadosDoForm)
 
-            toast.success("Aluno cadastrado com sucesso!", {
-                style: { background: '#0d6efd', color: '#fff' }
-            })
+    toast.success("Aluno cadastrado com sucesso!", {
+        style: { background: '#0d6efd', color: '#fff' }
+    })
 
-            handleReset()
-        } catch (error) {
-            toast.error("Erro ao cadastrar aluno.", {
-                style: { background: '#dc3545', color: '#fff' }
-            })
-            console.error(error)
-        }
+    handleReset()
+} catch (error) {
+    console.error("Erro ao cadastrar aluno:", error)
+
+    // Se for erro de CORS ou rede
+    if (error.code === "ERR_NETWORK") {
+        toast.error("Erro de rede ou CORS: verifique se o backend está aceitando requisições.", {
+            style: { background: '#dc3545', color: '#fff' }
+        })
+    } else {
+        toast.error("Erro ao cadastrar aluno.", {
+            style: { background: '#dc3545', color: '#fff' }
+        })
     }
+}}
 
     const handleReset = () => {
         setNome("")

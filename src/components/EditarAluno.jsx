@@ -23,20 +23,36 @@ const EditarAluno = ({ id, onSucesso }) => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await axios.put(`${urlDoBackend}/alunos/${id}`, {
+    e.preventDefault();
+
+    try {
+        await axios.put(`https://flask-api-alunos.onrender.com/alunos/${id}`, {
             ...form,
-            nota1: parseFloat(form.nota1),
-            nota2: parseFloat(form.nota2),
-            nota3: parseFloat(form.nota3),
-            nota4: parseFloat(form.nota4)
-})
-        } catch (err) {
-            console.error('Erro ao atualizar aluno:', err);
-            toast.error('Erro ao atualizar aluno!');
+            nota1: parseFloat(form.nota1) || 0,
+            nota2: parseFloat(form.nota2) || 0,
+            nota3: parseFloat(form.nota3) || 0,
+            nota4: parseFloat(form.nota4) || 0
+        });
+
+        toast.success("Aluno atualizado com sucesso!", {
+            style: { background: '#198754', color: '#fff' } // verde sucesso
+        });
+
+        // resetar ou redirecionar, se quiser
+    } catch (err) {
+        console.error("Erro ao atualizar aluno:", err);
+
+        if (err.code === "ERR_NETWORK") {
+            toast.error("Erro de rede ou CORS ao atualizar aluno!", {
+                style: { background: '#dc3545', color: '#fff' }
+            });
+        } else {
+            toast.error("Erro ao atualizar aluno!", {
+                style: { background: '#dc3545', color: '#fff' }
+            });
         }
-    };
+    }
+}
 
     const handleReset = () => {
         setForm({
