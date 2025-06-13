@@ -9,7 +9,9 @@ const EditarAluno = ({ id, onSucesso }) => {
         nome: "", email: "", nota1: "", nota2: "", nota3: "", nota4: ""});
 
     // const urlDoBackend = "http://localhost:3000";
-    const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
+    // const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
+    const urlDoBackend = "https://flask-api-alunos.onrender.com";
+
 
 
     useEffect(() => {

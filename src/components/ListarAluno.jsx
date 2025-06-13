@@ -11,7 +11,9 @@ import { Modal } from 'react-bootstrap';
 
 const ExcluirAluno = async (id) => {
     // const urlDoBackend = "http://localhost:3000"
-    const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
+    // const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
+    const urlDoBackend = "https://flask-api-alunos.onrender.com";
+
 
     try {
         const result = await Swal.fire({
@@ -29,32 +31,43 @@ const ExcluirAluno = async (id) => {
                 actions: 'justify-content-center gap-2'
             },
             buttonsStyling: false
-        })
+        });
 
         if (result.isConfirmed) {
-            await axios.delete(`https://flask-api-alunos.onrender.com/alunos/${id}`);
-
-Swal.fire({
-    title: 'Deletado!',
-    text: 'O aluno foi deletado com sucesso.',
-    icon: 'success',
-    confirmButtonText: 'OK',
-    customClass: {
-        confirmButton: 'btn btn-success',
-        title: 'fw-semibold fs-4',
-        popup: 'p-4 rounded'
-    },
-    buttonsStyling: false
-});
-return true;
-
-}
+            await axios.delete(`${urlDoBackend}/alunos/${id}`);
+            Swal.fire({
+                title: 'Deletado!',
+                text: 'O aluno foi deletado com sucesso.',
+                icon: 'success',
+                confirmButtonText: 'OK',
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    title: 'fw-semibold fs-4',
+                    popup: 'p-4 rounded'
+                },
+                buttonsStyling: false
+            });
+            return true;
+        }
+        return false;
+    } catch (error) {
+        console.error("Houve um erro ao deletar o aluno: ", error);
+        Swal.fire(
+            'Erro',
+            'Houve um erro ao tentar deletar o aluno. Por favor, tente novamente.',
+            'error'
+        );
+        return false;
+    }
+};
 
 const ListarAluno = () => {
 
     // const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
     // const urlDoBackend = "http://localhost:3000"
-    const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
+    // const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
+    const urlDoBackend = "https://flask-api-alunos.onrender.com";
+
 
     const [alunos, setAlunos] = useState([])
     const [carregando, setCarregando] = useState(true)
@@ -81,9 +94,7 @@ const ListarAluno = () => {
             console.error("Houve um erro para obter a listagem de alunos: ", error);
             setCarregando(false);
         });
-}, []);
-
-
+}, [])
 
     const totalPaginas = Math.ceil(alunos.length / itensPorPagina)
 

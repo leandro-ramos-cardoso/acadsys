@@ -7,7 +7,9 @@ import 'react-toastify/dist/ReactToastify.css'
 const CadastrarAluno = () => {
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
-    const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
+    // const urlDoBackend = import.meta.env.VITE_BACKEND_URL;
+    const urlDoBackend = "https://flask-api-alunos.onrender.com";
+
 
     // const urlDoBackend = "http://localhost:3000"
     // const urlDoBackend = "https://api.sheetbest.com/sheets/24400fab-1819-4a8f-95d9-5da2a3f95eee"
